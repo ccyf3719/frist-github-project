@@ -1,0 +1,35 @@
+.row{
+    margin-bottom:20px;
+}
+.row .row{
+    margin-top:10px;
+    margin-bottom:0;
+}
+[class*="col"]{
+    overflow: hidden;
+    height:50px;
+    padding-top:15px;
+    padding-bottom:15px;
+    background: #e7e7e7;
+    /*border:1px solid #dddddd;*/
+    /*background:rgba(170, 120 ,178, .9);*/
+    border:1px solid rgba(86,61,124,.2);
+    text-align: center;
+}
+#img{
+    padding-top:0px;
+    padding-bottom:0px;
+    background: rgba(255,255,255,0);
+}
+img {
+    width:120px;
+    height:48px;
+}
+#login,#landing{
+    font-size: 10px;
+    text-align: right;
+    padding-top:35px;
+    padding-bottom:5px;
+    background: rgba(255,255,255,0);
+    border:0px;
+}
