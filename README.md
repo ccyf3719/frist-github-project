@@ -1,2 +1,0 @@
-# frist-github-project
-test

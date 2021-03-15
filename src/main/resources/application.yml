@@ -1,9 +1,0 @@
-server:
-  port: 9000
-
-#ÉèÖÃµÇÂ½Ê±SecurityÕËºÅÃÜÂë
-spring:
-  security:
-    user:
-      name: cyf
-      password: 123456789
