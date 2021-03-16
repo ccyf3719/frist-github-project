@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 /**
@@ -12,6 +13,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
  * @author yifei.cuan@hand-china.com 2021/03/08 16:00
  */
 @Configuration
+@EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
@@ -24,17 +26,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/v1/**").hasRole("User")
-                .antMatchers("/v1/**").hasRole("Admin")
-                .antMatchers("/v2/**").hasRole("Admin")
-                .anyRequest().authenticated()
+                .antMatchers("/v1/**").permitAll().anyRequest().authenticated()
+//                .and()
+//                .antMatchers("/v1/**").hasRole("Admin")
+//                .antMatchers("/v2/**").hasRole("Admin")
+//                .anyRequest().authenticated()
                 .and().formLogin()
                 .and().httpBasic();
     }
 
     @Override
     public void configure(WebSecurity web) throws Exception {
-        super.configure(web);
+//        super.configure(web);
         web.ignoring().antMatchers("/v1/hello");
     }
 
