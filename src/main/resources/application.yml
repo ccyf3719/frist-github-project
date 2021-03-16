@@ -1,9 +1,10 @@
 server:
   port: 9000
 
-#ÉèÖÃµÇÂ½Ê±SecurityÕËºÅÃÜÂë
+#ï¿½ï¿½ï¿½Ãµï¿½Â½Ê±Securityï¿½Ëºï¿½ï¿½ï¿½ï¿½ï¿½
 spring:
   security:
     user:
       name: cyf
       password: 123456789
+      roles: Admin
